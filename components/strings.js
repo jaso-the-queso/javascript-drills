@@ -14,30 +14,34 @@ class StringDrills {
      * Takes in two parameters (string), concatenate (merges) them together and
      * returns them.
      */
-    combine() {
-
+    combine(x, y) {
+        return x + y;
     }
 
     /**
      * Takes in one parameter (string), returns its length
      */
-    length() {
-
+    length(x) {
+        return x.length;
     }
 
     /**
      * Takes in one parameter (string), returns true if it is empty, false otherwise
      */
-    isEmpty() {
-
-    }
+    isEmpty(x) {
+        if (x === '') {
+            return true;
+        } else {
+            return false;
+        }
+    }   
 
     /**
      * Takes in one parameter (string), returns an Array of strings that
      * contains only the words in the string (no spaces)
      */
-    toArray() {
-
+    toArray(x) {
+        return x.split(' ');
     }
 
     /**
@@ -45,16 +49,26 @@ class StringDrills {
      * Returns a string that only contains the first X number of characters
      * based on the number parameter.
      */
-    clip() {
-
+    clip(string, number) {
+        return string.substring(0, number);
     }
 
     /**
      * Takes in one parameter (string), returns a new string with the characters
      * in the reverse order
      */
-    reverse() {
+    reverse(x) {
 
+        // // let splitX = x.split('');
+        // // let reverseX = splitX.reverse();
+        // // let joinX = reverseX.join('');
+        // // return joinX
+
+        // OR 
+
+        return x.split('').reverse().join('');
+
+        OR
     }
 
     /**
