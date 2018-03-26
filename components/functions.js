@@ -11,7 +11,17 @@
  * divisible by 5, returns 'Buzz'. If the number is divisible by 3 and 5, returns 'FizzBuzz'.
  * If the number is not divisible by 3 or 5, returns '.'.
  */
-function fizzbuzz() {}
+function fizzbuzz(number) {
+    if (number % 3 === 0 && number % 5 === 0) {
+        return 'FizzBuzz';
+    } else if (number % 3 === 0) {
+        return 'Fizz';
+    } else if (number % 5 === 0) {
+        return 'Buzz';
+    } else {
+        return '.';
+    }
+}
 
 /**
  * Takes in a number and returns the factorial of the number (i.e. 5! = 5 * 4 * 3 * 2 * 1 = 120)
@@ -23,8 +33,18 @@ function factorial() {}
  *
  * @example fib(6) -> 8
  */
-function fib() {
+function fib(number) {
+    let previous_first = 0;
+    let previous_second = 1;
+    let next = 1;
 
+    for (let i = 2; i <= number; i++) {
+        next = previous_first + previous_second;
+        previous_first = previous_second;
+        previous_second = next;
+    }
+
+    return next;
 }
 
 /**

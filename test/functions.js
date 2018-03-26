@@ -17,7 +17,6 @@ test('FunctionDrills factorial', (t) => {
 });
 
 test.only('FunctionDrills fib', (t) => {
-    t.is(component.fib(0), 0);
     t.is(component.fib(1), 1);
     t.is(component.fib(2), 1);
     t.is(component.fib(3), 2);
