@@ -56,3 +56,8 @@ test('StringDrills.contains', (t) => {
     t.true(component.contains('ab', 'b'));
     t.false(component.contains('ab', 'c'));
 });
+
+test('StringDrills.isEqual', (t) => {
+    t.true(component.isEqual('a', 'a'));
+    t.false(component.isEqual('a', 'b'));
+});

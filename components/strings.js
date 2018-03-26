@@ -68,7 +68,7 @@ class StringDrills {
 
         return x.split('').reverse().join('');
 
-        OR
+        // OR
     }
 
     /**
@@ -78,16 +78,32 @@ class StringDrills {
      * them. The final string should not be longer than the number passed in! If the number passed in is less than or equal to 3,
      * return the string as-is.
      */
-    truncate() {
-
+    truncate(string, number) {
+        if (number <= 3) {
+            return string;
+        } 
+        if (number <= string.length) {
+            return string.slice(0, number - 3) + '...';
+        } else {
+            return string;
+        }
     }
 
     /**
      * Takes in one parameter (string), returns a new string that has no leading or
      * trailing spaces.
      */
-    strip() {
+    strip(x) {
+        // THIS ONE IS CHEESY AND ONLY REMOVES SPACES LOCATED AT THE BEGINNING AND END OF A STRING. DOESN'T ACCOUNT FOR THERE POSSIBLY BEING 2 SPACES AT THE BEGINNING AND END. 
+        // ex. '  HELLO  ' WOULD RETURN AS ' HELLO '
+        // if(x.includes(' ')) {
+        //     return x.slice(1, -1);
+        // } else {
+        //     return x;
+        // }
 
+        // THIS ONE FINDS AND REPLACES ALL EMPTY SPACE (' ', and also stuff like carriage returns, tabs, etc...) AND REPLACES THEM WITH NO SPACES ('').
+        return x.replace(/\s/g, '');
     }
 
     /**
@@ -95,32 +111,32 @@ class StringDrills {
      * a string that is repeated X number of times depending upon the number
      * passed in.
      */
-    repeat() {
-
+    repeat(string, number) {
+        return string.repeat(number);
     }
 
     /**
      * Takes in two paramters (strings), returns true if the second string is
      * contained within the first string, false otherwise.
      */
-    contains() {
-
+    contains(x, y) {
+        if (x.includes(y)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
      * Takes in two paramters (strings), returns true if the strings are
      * the same, false otherwise. (case-sensitive)
      */
-    isEqual() {
-
-    }
-
-    /**
-     * Takes in two paramters (strings), returns true if the strings have the
-     * same letters (case-insensitive), false otherwise.
-     */
-    isSimilar() {
-
+    isEqual(x, y) {
+        if (x === y) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
