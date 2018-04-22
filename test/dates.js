@@ -114,5 +114,3 @@ test('DateDrills getTimeOfDay', (t) => {
     t.is(component.getTimeOfDay(b), '2:10PM');
     t.is(component.getTimeOfDay(c), '12:02AM');
 });
-
-

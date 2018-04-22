@@ -16,15 +16,15 @@ class ArrayDrills {
      *
      * @example value(2, [0, 1, 3, 2]) -> 3
      */
-    value() {
-
+    value(number, array) {
+        return array[number];
     }
 
     /**
      * Takes in one parameter (array), returns its length
      */
-    length() {
-
+    length(array) {
+        return array.length;
     }
 
     /**
@@ -32,8 +32,8 @@ class ArrayDrills {
      *
      * @example min([2, 1, 4, 6, 0]) -> 0
      */
-    min() {
-
+    min(array) {
+        return Math.min(...array);
     }
 
     /**
@@ -41,8 +41,8 @@ class ArrayDrills {
      *
      * @example min([2, 1, 4, 6, 0]) -> 6
      */
-    max() {
-
+    max(array) {
+        return Math.max(...array);
     }
 
     /**
@@ -51,8 +51,8 @@ class ArrayDrills {
      *
      * @example sum([1, 2, 3, -2]) -> 4
      */
-    sum() {
-
+    sum(array) {
+        return array.reduce((total, amount) => total + amount);
     }
 
     /**
@@ -67,9 +67,11 @@ class ArrayDrills {
      *
      * @example count(['A', 7, 3, 'J']) -> -1
      */
-    count() {
-
-    }
+    // count(array) {
+    //     let up = [2, 3, 4, 5, 6];
+    //     let same = [7, 8, 9];
+    //     let down = [10, 'J', 'Q', 'K', 'A'];
+    // }
 
     /**
      * Takes in one parameter (array), returns a new array with values equal to
@@ -77,8 +79,8 @@ class ArrayDrills {
      *
      * @example square([2, 3, 4]) -> [4, 9, 16]
      */
-    square() {
-
+    square(array) {
+        return array.map((element) => element ** 2);
     }
 
     /**
@@ -87,8 +89,8 @@ class ArrayDrills {
      *
      * @example add(2, [2, 3, 4]) -> [4, 5, 6]
      */
-    add() {
-
+    add(number, array) {
+        return array.map((element) => element + number);
     }
 
     /**
@@ -98,8 +100,12 @@ class ArrayDrills {
      * @example contains(3, [1, 3, 2]) -> true
      * @example contains(3, [1, 2, 2]) -> false
      */
-    contains() {
-
+    contains(number, array) {
+        if (array.includes(number)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -108,8 +114,8 @@ class ArrayDrills {
      *
      * @example combine([1, 2, 3, 4], [2, 3, 5]) -> [1, 2, 3, 4, 2, 3, 5]
      */
-    combine() {
-
+    combine(a1, a2) {
+        return a1.concat(a2);
     }
 
     /**
@@ -117,8 +123,8 @@ class ArrayDrills {
      *
      * @example reverse([1, 2, 4, 3]) -> [3, 4, 2, 1]
      */
-    reverse() {
-
+    reverse(array) {
+        return array.reverse();
     }
 
     /**
@@ -129,9 +135,9 @@ class ArrayDrills {
      * @example sort([1, 2, 4, 3]) -> [1, 2, 3, 4]
      * @example sort(['Apple', 'Pear', 'Baseball', 'Banana']) -> ['Apple', 'Banana', 'Baseball', 'Pear']
      */
-    sort() {
+    // sort() {
 
-    }
+    // }
 
     /**
      * Takes in two parameters (arrays), returns the union of the two sets
@@ -139,8 +145,8 @@ class ArrayDrills {
      *
      * @example union([1, 2, 3, 4], [2, 3, 5]) -> [1, 2, 3, 4, 5]
      */
-    union() {
-
+    union(a1, a2) {
+        return [...new Set([...a1, ...a2])];
     }
 
     /**
@@ -149,8 +155,8 @@ class ArrayDrills {
      *
      * @example intersect([1, 2, 3, 4], [2, 3, 5]) -> [2, 3]
      */
-    intersect() {
-
+    intersect(a1, a2) {
+        return [...new Set(a1)].filter(x => new Set(a2).has(x));
     }
 
     /**
@@ -160,8 +166,8 @@ class ArrayDrills {
      *
      * @example difference([1, 2, 3, 4], [2, 3, 5]) -> [1]
      */
-    difference() {
-
+    difference(a1, a2) {
+        return a1.filter(x => !a2.includes(x));
     }
 
     /**
@@ -170,8 +176,8 @@ class ArrayDrills {
      *
      * @example defined([1, NaN, undefined, null, 3, null, 4, 0]) -> [1, 3, 4, 0]
      */
-    defined() {
-
+    defined(a) {
+        return a.filter(Boolean);    
     }
 
     /**
@@ -180,7 +186,7 @@ class ArrayDrills {
      *
      * @example remove(3, [1, 2, 4, 3, 5, 3]) -> [1, 2, 4, 5]
      */
-    remove() {
+    remove(num, arr) {
 
     }
 

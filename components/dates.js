@@ -14,23 +14,36 @@ class DateDrills {
      * Takes in two parameters (Dates), and returns true if the first parameter is
      * an earlier Date than the second parameter, false otherwise
      */
-    isBefore() {
-
+    isBefore(a, b) {
+        if (a < b) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
      * Takes in two parameters (Dates), and returns true if the first parameter is
      * a later Date than the second parameter, false otherwise
      */
-    isAfter() {
-
+    isAfter(a, b) {
+        if (a > b) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
      * Takes in two parameters (Dates), and returns true if the first parameter is
      * the same Date as the second parameter, false otherwise
      */
-    isSame() {
+    isSame(a, b) {
+        if (a === b) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -38,8 +51,12 @@ class DateDrills {
      * between the second parameter Date and the third parameter Date, false otherwise.
      * The third parameter will always be later than the second parameter.
      */
-    isBetween() {
-
+    isBetween(a, b, c) {
+        if (a > b && a < c) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -48,31 +65,56 @@ class DateDrills {
      *
      * HINT: Sunday is the 0 day of the week, Saturday is day 6 (0-indexed)
      */
-    dayOfWeek() {
+    dayOfWeek(a) {
+        let days = [
+            'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday'
+        ];
 
+        return days[a.getDay()];
     }
 
     /**
      * Takes in one parameter (Date). Returns the day of the month that the date falls on
      * as a number.
      */
-    dayOfMonth() {
-
+    dayOfMonth(a) {
+        return a.getDate();
     }
 
     /**
      * Takes in one parameter (Date). Returns the year on which the date falls (e.g. 2018).
      */
-    getYear() {
-
+    getYear(a) {
+        return a.getFullYear();
     }
 
     /**
      * Takes in one parameter (Date). Returns a string representing the month on which the
      * date falls (e.g. 'January', 'February', 'March', etc)
      */
-    getMonth() {
+    getMonth(a) {
+        let months = [
+            'January',
+            'Febuary',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
 
+        return months[a.getMonth()];
     }
 
     /**
@@ -83,8 +125,34 @@ class DateDrills {
      * HINT: If returning standard time, return the meridiem (e.g. '1:15PM'). If returning military time
      * the meridiem is not needed.
      */
-    getTimeOfDay() {
+    getTimeOfDay(a, boolean) {
+        let hours = a.getHours();
+        let minutes = a.getMinutes();
 
+        if (boolean === true) {
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+
+            return hours + ":" + minutes;
+
+        } else {
+            let suffix = "AM";
+
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (hours >= 12) {
+                suffix = "PM";
+                hours = hours - 12;
+            }
+            if (hours === 0) {
+                hours = 12;
+            }
+
+            return hours + ":" + minutes + suffix;
+
+        }
     }
 }
 

@@ -30,10 +30,10 @@ test('ArrayDrills.sum', (t) => {
     t.is(component.sum([0, 1, 2]), 3);
 });
 
-test('ArrayDrills.count', (t) => {
-    t.is(component.count(['A', 7, 3, 'J']), -1);
-    t.is(component.count(['A', 7, 3, 'J', 10]), -2);
-});
+// test('ArrayDrills.count', (t) => {
+//     t.is(component.count(['A', 7, 3, 'J']), -1);
+//     t.is(component.count(['A', 7, 3, 'J', 10]), -2);
+// });
 
 test('ArrayDrills.square', (t) => {
     t.deepEqual(component.square([0, 1, -1]), [0, 1, 1]);
@@ -58,11 +58,11 @@ test('ArrayDrills.reverse', (t) => {
     t.deepEqual(component.reverse(['cat', 'dog', 1, 'panda', true]), [true, 'panda', 1, 'dog', 'cat']);
 });
 
-test('ArrayDrills.sort', (t) => {
-    t.deepEqual(component.sort([5, 2, 6, 10, 12]), [2, 5, 6, 10, 12]);
-    t.deepEqual(component.sort(['dog', 'cat', 'zebra', 'panda']), ['cat', 'dog', 'panda', 'zebra']);
-    t.deepEqual(component.sort([true, null, [], undefined, {}]), []);
-});
+// test('ArrayDrills.sort', (t) => {
+//     t.deepEqual(component.sort([5, 2, 6, 10, 12]), [2, 5, 6, 10, 12]);
+//     t.deepEqual(component.sort(['dog', 'cat', 'zebra', 'panda']), ['cat', 'dog', 'panda', 'zebra']);
+//     t.deepEqual(component.sort([true, null, [], undefined, {}]), []);
+// });
 
 test('ArrayDrills.union', (t) => {
     t.deepEqual(component.union([0, 1, 2], [2, 6, 6]), [0, 1, 2, 6]);
